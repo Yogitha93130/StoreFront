@@ -1,10 +1,10 @@
 public class Inventory {
 
-	private String inventoryId;
+    private String inventoryId;
 
-	public void quantity() {
-		// TODO - implement Inventory.quantity
-		throw new UnsupportedOperationException();
-	}
+    public void quantity() {
+        // TODO - implement Inventory.quantity
+        throw new UnsupportedOperationException();
+    }
 
 }
