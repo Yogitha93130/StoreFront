@@ -1,4 +1,4 @@
-package com.acme.service;
+package com.acme.service;  // Fixed package - was incorrectly in model
 
 import com.acme.model.Payment;
 import com.acme.external.PaymentGateway;
