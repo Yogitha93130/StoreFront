@@ -1,14 +1,9 @@
-package com.acme.service;
+package com.acme;
 
-import com.acme.model.Payment;
-import com.acme.external.PaymentGateway;
-import com.acme.external.PaymentResult;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-// Stub implementation for testing
+// Stub implementations
 class SuccessfulPaymentGatewayStub implements PaymentGateway {
     @Override
     public PaymentResult processPayment(double amount, String paymentMethod, String currency) {
@@ -23,19 +18,12 @@ class FailedPaymentGatewayStub implements PaymentGateway {
     }
 }
 
-class PaymentServiceTest {
-
-    private PaymentService paymentService;
-
-    @BeforeEach
-    void setUp() {
-        // No mocks needed - we're using stubs
-    }
+public class PaymentServiceTest {
 
     @Test
     void processPayment_WithSuccessfulPaymentStub_ShouldReturnSuccessfulPayment() {
-        // Arrange - Use successful payment stub
-        paymentService = new PaymentService(new SuccessfulPaymentGatewayStub());
+        // Arrange
+        PaymentService paymentService = new PaymentService(new SuccessfulPaymentGatewayStub());
         Payment payment = new Payment(100.0, "credit_card", "USD");
         
         // Act
@@ -50,8 +38,8 @@ class PaymentServiceTest {
 
     @Test
     void processPayment_WithFailedPaymentStub_ShouldReturnFailedPayment() {
-        // Arrange - Use failed payment stub
-        paymentService = new PaymentService(new FailedPaymentGatewayStub());
+        // Arrange
+        PaymentService paymentService = new PaymentService(new FailedPaymentGatewayStub());
         Payment payment = new Payment(100.0, "credit_card", "USD");
         
         // Act
