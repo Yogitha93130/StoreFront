@@ -4,6 +4,7 @@ public interface PaymentGateway {
     PaymentResult processPayment(double amount, String paymentMethod, String currency);
 }
 
+// Make PaymentResult public
 class PaymentResult {
     private boolean success;
     private String transactionId;
