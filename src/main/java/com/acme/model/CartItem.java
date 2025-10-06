@@ -9,6 +9,7 @@ public class CartItem {
         this.quantity = quantity;
     }
     
+    // Additional constructor for the test
     public CartItem(ShoppingCart cart, Product product, int quantity) {
         this(product, quantity);
     }
@@ -20,4 +21,5 @@ public class CartItem {
     // Getters
     public Product getProduct() { return product; }
     public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 }
